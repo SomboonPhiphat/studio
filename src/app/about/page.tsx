@@ -47,7 +47,7 @@ export default function AboutPage() {
                 <li><strong>ความวิตกกังวล/ซึมเศร้า (Anxiety/Depression)</strong></li>
               </ul>
               <p className="mt-4">
-                ผลลัพธ์จากส่วนนี้จะถูกแปลงเป็นรหัสสุขภาพ 5 หลัก (Health Profile) ซึ่งสามารถนำไปคำนวณเป็นค่าอรรถประโยชน์ (Utility Score) ได้
+                โดยแต่ละมิติมี 5 ระดับความรุนแรง (Levels)
               </p>
             </div>
 

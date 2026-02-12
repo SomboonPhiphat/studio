@@ -24,7 +24,7 @@ export default function ResultPanel({
       <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="text-center sm:text-left">
           <p className="text-sm uppercase tracking-widest text-blue-300">
-            Health Profile (Code)
+            Health Profile
           </p>
           {healthProfileCode ? (
              <p className="font-mono text-4xl font-bold tracking-wider">

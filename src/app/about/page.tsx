@@ -37,7 +37,7 @@ export default function AboutPage() {
             <div>
               <h3 className="mb-2 text-xl font-semibold">1. ส่วนชุดคำถาม 5 ข้อ (EQ-5D-5L)</h3>
               <p>
-                เป็นการประเมินสุขภาพใน 5 มิติ (5 Dimensions) โดยแต่ละมิติมี 5 ระดับความรุนแรง (5 Levels) ได้แก่:
+                เป็นการประเมินสุขภาพใน 5 มิติ (Dimensions) โดยแต่ละมิติมี 5 ระดับความรุนแรง (Levels) ได้แก่:
               </p>
               <ul className="ml-6 mt-4 list-disc space-y-2">
                 <li><strong>การเคลื่อนไหว (Mobility):</strong> ความสามารถในการเดิน</li>

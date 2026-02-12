@@ -35,7 +35,7 @@ export default function AboutPage() {
             </p>
             
             <div>
-              <h3 className="mb-2 text-xl font-semibold">1. ส่วนอธิบาย (Descriptive System)</h3>
+              <h3 className="mb-2 text-xl font-semibold">1. ส่วนชุดคำถาม 5 ข้อ (EQ-5D-5L)</h3>
               <p>
                 เป็นการประเมินสุขภาพใน 5 มิติ (5 Dimensions) โดยแต่ละมิติมี 5 ระดับความรุนแรง (5 Levels) ได้แก่:
               </p>

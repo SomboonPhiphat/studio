@@ -9,7 +9,7 @@ export default function AboutPage() {
       <header className="relative bg-gradient-to-b from-card via-card to-background/80 py-8 text-center shadow-sm">
         <div className="container mx-auto">
           <h1 className="pt-8 text-4xl font-bold text-gradient bg-gradient-to-r from-primary to-blue-400 dark:to-cyan-400 md:text-5xl">
-            EQ-5D-5L คืออะไร?
+            EQ-5D-5L <span className="text-lg md:text-2xl">คืออะไร?</span>
           </h1>
           <p className="mt-2 text-lg text-muted-foreground">
             แบบประเมินคุณภาพชีวิตที่เกี่ยวข้องกับสุขภาพ
@@ -17,7 +17,7 @@ export default function AboutPage() {
         </div>
       </header>
       <div className="container mx-auto max-w-4xl space-y-8 px-4 py-8">
-        <Card className="shadow-lg">
+        <Card className="shadow-lg dark:bg-slate-800/60">
            <CardHeader>
              <Link href="/" passHref>
               <Button variant="outline">

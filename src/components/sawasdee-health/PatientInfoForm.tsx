@@ -13,6 +13,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { Info } from 'lucide-react';
 
 type PatientInfoFormProps = {
   name: string;
@@ -40,11 +43,17 @@ export default function PatientInfoForm({
   years,
 }: PatientInfoFormProps) {
   return (
-    <Card className="shadow-lg">
-      <CardHeader>
+    <Card className="shadow-lg dark:bg-slate-800/60">
+      <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="text-2xl font-semibold">
           ข้อมูลผู้ป่วย (Patient Information)
         </CardTitle>
+        <Link href="/about" passHref>
+          <Button variant="link" className="text-muted-foreground">
+            <Info className="mr-2 h-4 w-4" />
+            EQ-5D-5L คืออะไร?
+          </Button>
+        </Link>
       </CardHeader>
       <CardContent className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div className="space-y-2">

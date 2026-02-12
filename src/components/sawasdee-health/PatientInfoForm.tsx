@@ -72,7 +72,7 @@ export default function PatientInfoForm({
           </Select>
         </div>
         <div className="space-y-2 md:col-span-2">
-          <Label>🎂 วันเกิด (วัน / เดือน / ปี พ.ศ.)</Label>
+          <Label>🎂 วันเกิด (วัน / เดือน / พ.ศ.)</Label>
           <div className="grid grid-cols-3 gap-3">
             <Select
               value={dob.day}
@@ -109,7 +109,7 @@ export default function PatientInfoForm({
               onValueChange={(year) => setDob({ ...dob, year })}
             >
               <SelectTrigger>
-                <SelectValue placeholder="ปี พ.ศ." />
+                <SelectValue placeholder="พ.ศ." />
               </SelectTrigger>
               <SelectContent>
                 {years.map((y) => (

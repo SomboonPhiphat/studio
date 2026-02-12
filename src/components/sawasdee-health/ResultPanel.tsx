@@ -37,7 +37,7 @@ export default function ResultPanel({
         <div className="h-16 w-px bg-blue-700 hidden sm:block"></div>
         <div className="text-center sm:text-right">
           <p className="text-sm uppercase tracking-widest text-blue-300">
-            Utility Score (Hybrid)
+            Utility Score
           </p>
           {utilityScore !== null ? (
             <p className={cn('text-4xl font-bold', scoreColorClass)}>

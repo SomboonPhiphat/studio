@@ -27,8 +27,8 @@ export default function AboutPage() {
             </Link>
           </CardHeader>
           <CardContent className="space-y-6 text-base leading-relaxed">
-            <p className="font-semibold text-primary">
-              EQ-5D-5L เป็นเครื่องมือมาตรฐานที่ใช้กันอย่างแพร่หลายทั่วโลกในการวัดและประเมินคุณภาพชีวิตที่เกี่ยวข้องกับสุขภาพ (Health-Related Quality of Life - HRQoL) พัฒนาโดยกลุ่ม EuroQol.
+            <p>
+              <span className="text-2xl font-bold text-primary">EQ-5D-5L</span> เป็นเครื่องมือมาตรฐานที่ใช้กันอย่างแพร่หลายทั่วโลกในการวัดและประเมินคุณภาพชีวิตที่เกี่ยวข้องกับสุขภาพ (Health-Related Quality of Life - HRQoL) พัฒนาโดยกลุ่ม EuroQol.
             </p>
             <p>
               แบบประเมินนี้ประกอบด้วย 2 ส่วนหลัก:

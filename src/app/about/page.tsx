@@ -50,11 +50,11 @@ export default function AboutPage() {
                 โดยแต่ละมิติมี 5 ระดับความรุนแรง (Levels)
               </p>
               <ul className="ml-6 mt-4 list-disc space-y-2">
-                <li>ระดับ 1 หมายถึง ไม่มีปัญหา (No problem)</li>
-                <li>ระดับ 2 หมายถึง มีปัญหาเล็กน้อย (Slight problem)</li>
-                <li>ระดับ 3 หมายถึง มีปัญหาปานกลาง (Moderate problem)</li>
-                <li>ระดับ 4 หมายถึง มีปัญหามาก (Severe problem)</li>
-                <li>ระดับ 5 หมายถึง มีปัญหามากที่สุด (Unable to)</li>
+                <li><strong>ระดับ 1</strong> หมายถึง ไม่มีปัญหา (No problem)</li>
+                <li><strong>ระดับ 2</strong> หมายถึง มีปัญหาเล็กน้อย (Slight problem)</li>
+                <li><strong>ระดับ 3</strong> หมายถึง มีปัญหาปานกลาง (Moderate problem)</li>
+                <li><strong>ระดับ 4</strong> หมายถึง มีปัญหามาก (Severe problem)</li>
+                <li><strong>ระดับ 5</strong> หมายถึง มีปัญหามากที่สุด (Unable to)</li>
               </ul>
             </div>
 

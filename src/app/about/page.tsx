@@ -52,7 +52,7 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <h3 className="mb-2 text-xl font-semibold">2. ส่วนมาตรวัดอุณหภูมิ (Visual Analogue Scale - EQ-VAS)</h3>
+              <h3 className="mb-2 text-xl font-semibold">2. ส่วน Visual Analog scale (EQ-VAS)</h3>
               <p>
                 เป็นการให้ผู้ตอบประเมินระดับสุขภาพของตนเองในวันนั้นๆ โดยให้คะแนนตั้งแต่ 0 (สุขภาพแย่ที่สุดที่คิดได้) ถึง 100 (สุขภาพดีที่สุดที่คิดได้)
               </p>

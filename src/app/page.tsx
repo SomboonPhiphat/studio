@@ -59,21 +59,17 @@ export default function Home() {
 
   // Derived state for calculations
   const { healthProfileCode, utilityScore } = useMemo(() => {
-    const answeredDimensions = Object.values(answers).filter((a) => a > 0);
-    if (answeredDimensions.length < 5) {
-      const partialCode = Object.values(answers)
-        .map((a) => (a === 0 ? 'X' : a))
-        .join('');
-      return { healthProfileCode: partialCode, utilityScore: null };
-    }
+    const code = Object.values(answers)
+      .map((a) => (a === 0 ? 'X' : a))
+      .join('');
 
-    const code = Object.values(answers).join('');
     let deduction = 0;
-    deduction += COEFFICIENTS.mobility[answers.mobility - 1];
-    deduction += COEFFICIENTS.selfCare[answers.selfCare - 1];
-    deduction += COEFFICIENTS.usualActivities[answers.usualActivities - 1];
-    deduction += COEFFICIENTS.pain[answers.pain - 1];
-    deduction += COEFFICIENTS.anxiety[answers.anxiety - 1];
+    (Object.keys(answers) as (keyof Answers)[]).forEach((key) => {
+      const level = answers[key];
+      if (level > 0) {
+        deduction += COEFFICIENTS[key][level - 1];
+      }
+    });
 
     const score = 1 - deduction;
     return { healthProfileCode: code, utilityScore: score };
@@ -101,7 +97,7 @@ export default function Home() {
       });
       return;
     }
-    if (utilityScore === null) {
+    if (healthProfileCode.includes('X')) {
       toast({
         title: 'ข้อมูลไม่สมบูรณ์',
         description: 'กรุณาตอบแบบสอบถามให้ครบทั้ง 5 มิติ',

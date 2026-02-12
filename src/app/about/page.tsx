@@ -40,11 +40,11 @@ export default function AboutPage() {
                 เป็นการประเมินสุขภาพใน 5 มิติ (Dimensions) โดยแต่ละมิติมี 5 ระดับความรุนแรง (Levels) ได้แก่:
               </p>
               <ul className="ml-6 mt-4 list-disc space-y-2">
-                <li><strong>การเคลื่อนไหว (Mobility):</strong> ความสามารถในการเดิน</li>
-                <li><strong>การดูแลตนเอง (Self-Care):</strong> ความสามารถในการล้างหน้า/แต่งตัว</li>
-                <li><strong>กิจกรรมที่ทำเป็นประจำ (Usual Activities):</strong> ความสามารถในการทำกิจกรรมต่างๆ เช่น ทำงาน เรียนหนังสือ ทำงานบ้าน</li>
-                <li><strong>ความเจ็บปวด/ไม่สบาย (Pain/Discomfort):</strong> ระดับความเจ็บปวดหรือไม่สบายตัว</li>
-                <li><strong>ความวิตกกังวล/ซึมเศร้า (Anxiety/Depression):</strong> สภาพจิตใจ</li>
+                <li><strong>การเคลื่อนไหว (Mobility)</strong></li>
+                <li><strong>การดูแลตนเอง (Self-Care)</strong></li>
+                <li><strong>กิจกรรมที่ทำเป็นประจำ (Usual Activities)</strong></li>
+                <li><strong>ความเจ็บปวด/ไม่สบาย (Pain/Discomfort)</strong></li>
+                <li><strong>ความวิตกกังวล/ซึมเศร้า (Anxiety/Depression)</strong></li>
               </ul>
               <p className="mt-4">
                 ผลลัพธ์จากส่วนนี้จะถูกแปลงเป็นรหัสสุขภาพ 5 หลัก (Health Profile) ซึ่งสามารถนำไปคำนวณเป็นค่าอรรถประโยชน์ (Utility Score) ได้

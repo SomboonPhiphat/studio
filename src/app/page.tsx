@@ -245,7 +245,7 @@ export default function Home() {
         </Card>
       </div>
        <footer className="text-center text-sm text-muted-foreground py-6">
-        © {new Date().getFullYear()} Sawasdee Health. All Rights Reserved.
+        © {new Date().getFullYear()} Thai EQ-5D-5L. All Rights Reserved.
       </footer>
     </main>
   );

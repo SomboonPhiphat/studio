@@ -4,7 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Sawasdee Health: Thai EQ-5D-5L Calculator',
+  title: 'Thai EQ-5D-5L Calculator',
   description:
     'เครื่องมือประเมินคุณภาพชีวิตและค่าอรรถประโยชน์ตามแบบจำลอง Thai Hybrid Model',
 };

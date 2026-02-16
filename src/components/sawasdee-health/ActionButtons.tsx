@@ -20,7 +20,7 @@ export default function ActionButtons({
       </Button>
       <Button size="lg" variant="secondary" onClick={onExport}>
         <BarChart3 className="mr-2 h-5 w-5" />
-        ส่งออกเป็น Excel
+        ส่งออก
       </Button>
       <Button size="lg" variant="destructive" onClick={onClearHistory}>
         <Trash2 className="mr-2 h-5 w-5" />

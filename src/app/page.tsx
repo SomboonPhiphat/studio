@@ -13,6 +13,7 @@ import {
 import type { Answers, HistoryEntry } from '@/lib/definitions';
 import { useToast } from '@/hooks/use-toast';
 
+import { saveToGoogleSheet } from './actions';
 import Header from '@/components/sawasdee-health/Header';
 import PatientInfoForm from '@/components/sawasdee-health/PatientInfoForm';
 import Instruction from '@/components/sawasdee-health/Instruction';
@@ -88,7 +89,7 @@ export default function Home() {
     setVasScore(50);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!name || !gender || !dob.day || !dob.month || !dob.year) {
       toast({
         title: 'ข้อมูลไม่สมบูรณ์',
@@ -119,11 +120,12 @@ export default function Home() {
       return;
     }
 
-    const age = differenceInYears(new Date(), birthDate);
+    const now = new Date();
+    const age = differenceInYears(now, birthDate);
 
     const newEntry: HistoryEntry = {
-      id: new Date().toISOString(),
-      dateTime: new Date().toLocaleString('th-TH', {
+      id: now.toISOString(),
+      dateTime: now.toLocaleString('th-TH', {
         year: 'numeric',
         month: 'short',
         day: 'numeric',
@@ -145,17 +147,39 @@ export default function Home() {
         'sawasdee_health_history',
         JSON.stringify(updatedHistory)
       );
-      toast({
-        title: 'บันทึกข้อมูลสำเร็จ',
-        description: `ข้อมูลของคุณ ${name} ถูกบันทึกแล้ว`,
-      });
     } catch (error) {
       console.error('Failed to save history to localStorage:', error);
       toast({
-        title: 'บันทึกข้อมูลล้มเหลว',
-        description: 'ไม่สามารถบันทึกข้อมูลลงในประวัติได้',
+        title: 'บันทึกประวัติล้มเหลว',
+        description: 'ไม่สามารถบันทึกข้อมูลลงในประวัติของเบราว์เซอร์ได้',
         variant: 'destructive',
       });
+      return;
+    }
+    
+    const sheetData = {
+      dateTime: now,
+      name,
+      gender,
+      age,
+      code: healthProfileCode,
+      score: utilityScore,
+      vas: vasScore,
+    };
+
+    const sheetResult = await saveToGoogleSheet(sheetData);
+
+    if (sheetResult.success) {
+        toast({
+            title: 'บันทึกข้อมูลสำเร็จ',
+            description: `ข้อมูลของคุณ ${name} ถูกบันทึกและส่งไปยัง Google Sheet เรียบร้อยแล้ว`,
+        });
+    } else {
+        toast({
+            title: 'บันทึกข้อมูลสำเร็จ (บางส่วน)',
+            description: `ข้อมูลถูกบันทึกในประวัติแล้ว แต่ส่งไปยัง Google Sheet ไม่สำเร็จ: ${sheetResult.message}`,
+            variant: 'destructive'
+        });
     }
 
     handleReset();

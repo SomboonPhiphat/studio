@@ -162,46 +162,6 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleExport = () => {
-    if (history.length === 0) {
-      toast({
-        title: 'ไม่มีข้อมูล',
-        description: 'ไม่มีข้อมูลในประวัติที่จะส่งออก',
-      });
-      return;
-    }
-    const headers = [
-      'วันที่',
-      'ชื่อ-นามสกุล',
-      'เพศ',
-      'อายุ',
-      'Health Profile',
-      'Utility Score',
-      'EQ-VAS',
-    ];
-    const rows = history.map((entry) =>
-      [
-        entry.dateTime,
-        entry.name,
-        entry.gender,
-        entry.age,
-        entry.code,
-        entry.score.toFixed(4),
-        entry.vas,
-      ].join(',')
-    );
-
-    const csvContent =
-      'data:text/csv;charset=utf-8,\uFEFF' + [headers.join(','), ...rows].join('\n');
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement('a');
-    link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `Sawasdee_Health_Export_${new Date().toISOString().split('T')[0]}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const handleClearHistory = () => {
     if (window.confirm('คุณแน่ใจหรือไม่ว่าต้องการล้างข้อมูลประวัติทั้งหมด?')) {
       setHistory([]);
@@ -253,7 +213,6 @@ export default function Home() {
 
         <ActionButtons
           onSave={handleSave}
-          onExport={handleExport}
           onClearHistory={handleClearHistory}
         />
 
